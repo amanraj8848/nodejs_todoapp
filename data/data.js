@@ -5,8 +5,8 @@ export const connectDB = () => {
     .connect(process.env.mongoUrl, {
       dbName: 'Testing',
     })
-    .then(() => {
-      console.log('Database connected')
+    .then((c) => {
+      console.log(`Database connected at ${c.connection.host}`)
     })
     .catch((err) => {
       console.log(err)
